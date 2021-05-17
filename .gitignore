@@ -1,8 +1,6 @@
 Pipfile
 Pipfile.lock
 venv/
-PicToEmo/
-TextToEmo/
 rMajorProject
 .vscode/*
 
