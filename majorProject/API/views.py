@@ -34,7 +34,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # load model for Text to Emotion
 modelTextToEmotion = ktrain.load_predictor(
-    'F:\Major Project\majorProject\TextToEmo')
+    '/home/ubuntu/MajorProject/majorProject/TextToEmo')
 
 
 ########################## TEXT TO EMOTION SECTION END########################
@@ -67,7 +67,7 @@ emotions = ['anger', 'disgust', 'fearful',
             'happy', 'neutral', 'sadness', 'surprise']
 
 modelPicToEmotion.load_weights(
-    'F:\Major Project\majorProject\PicToEmo\model.h5')
+    '/home/ubuntu/MajorProject/majorProject/PicToEmo/model.h5')
 
 # prevents openCL usage and unnecessary logging messages
 cv2.ocl.setUseOpenCL(False)
@@ -78,12 +78,11 @@ emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful",
 
 # initialize front face classifier
 cascade = cv2.CascadeClassifier(
-    "F:\Major Project\majorProject\PicToEmo\haarcascade_frontalface_default.xml")
+    "/home/ubuntu/MajorProject/majorProject/PicToEmo/haarcascade_frontalface_default.xml")
 
 
 ########################## PIC TO EMOTION SECTION END#########################
 
-# Update to ['GET']
 @api_view(['POST'])
 def PicToEmotion(request):
     """
@@ -107,14 +106,14 @@ def PicToEmotion(request):
         header, encoded = data_uri.split(",", 1)
         data = base64.b64decode(encoded)
 
-        with open("F:\Major Project\majorProject\API\imageToSave.jpeg", "wb") as fh:
+        with open("/home/ubuntu/MajorProject/majorProject/API/imageToSave.jpeg", "wb") as fh:
             fh.write(data)
     except:
         resp['message'] = "data_uri required"
 
     try:
         frame = cv2.imread(
-            "F:\Major Project\majorProject\API\imageToSave.jpeg")
+            "/home/ubuntu/MajorProject/majorProject/API/imageToSave.jpeg")
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blackwhite = cv2.equalizeHist(gray)
 
