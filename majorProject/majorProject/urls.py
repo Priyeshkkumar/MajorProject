@@ -7,7 +7,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('API.urls'))
+    path('api/', include('API.urls')),
+    path('', csrf_exempt(TemplateView.as_view(template_name="index.html")))
 ]
-urlpatterns += [re_path(r"^.*",
-                        csrf_exempt(TemplateView.as_view(template_name="index.html")))]
+# urlpatterns += [re_path(r"^.*",
+#                         csrf_exempt(TemplateView.as_view(template_name="index.html")))]

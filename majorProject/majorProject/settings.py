@@ -88,12 +88,6 @@ STATICFILES_DIRS = [
 ]
 
 
-# Tell django where to store uploaded files
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-# Tell browser from where to access images
-MEDIA_URL = "/media/"
-
-
 # Allowed Hosts
 CORS_ORIGIN_ALLOW_ALL = True
 
