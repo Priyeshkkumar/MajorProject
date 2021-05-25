@@ -227,6 +227,7 @@ Send2Trash==1.5.0
 sentencepiece==0.1.95
 seqeval==0.0.19
 simplegeneric==0.8.1
+simpy==4.0.1
 singledispatch @ file:///tmp/build/80754af9/singledispatch_1602523705405/work
 sip==4.19.13
 six @ file:///C:/ci/six_1605187374963/work
@@ -282,6 +283,7 @@ win-inet-pton==1.1.0
 win-unicode-console==0.5
 wincertstore==0.2
 wrapt==1.12.1
+wsnsimpy==0.2.5
 xlrd==1.2.0
 XlsxWriter @ file:///tmp/build/80754af9/xlsxwriter_1602692860603/work
 xlwings==0.20.8
